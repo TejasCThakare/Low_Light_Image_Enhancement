@@ -1,8 +1,8 @@
 # L2.5: Retinex-Based Low-Light Image Enhancement
 
-L2.5 is a full-fidelity low-light enhancement model combining architectural insights from KinD++, MIRNet, and Zero-DCE++. It performs Retinex-style decomposition, illumination enhancement, and realistic fusion with perceptual and statistical losses. Built for real-world use on LOL-v1 and LOL-v2 datasets.
+L2.5 is a complete low-light image enhancement model inspired by techniques from KinD++, MIRNet, and Zero-DCE++. It uses a Retinex-style decomposition to separate reflectance and illumination, enhances the illumination using a deep attention-based network, and fuses the components back into a visually improved image. This model is trained and evaluated on the LOL-v1 dataset.
 
-The goal of this project is to provide high-quality enhancement with realistic tone, structure preservation, and minimal visual artifacts.
+The design focuses on natural-looking results with improved brightness, color consistency, and structural clarity.
 
 ---
 
@@ -15,11 +15,11 @@ Retinex-L2.5/
 ├── eval.py              → Evaluate PSNR, SSIM, and LPIPS metrics  
 ├── retinex_model.py     → Core Retinex-based generator architecture  
 ├── losses.py            → LAB, LPIPS, VGG, SSIM, TV, histogram losses  
-├── dataloader.py        → Handles LOL-v1 / LOL-v2 datasets  
+├── dataloader.py        → Handles LOL-v1 dataset  
 ├── utils.py             → Image saving and preprocessing helpers  
-├── requirements.txt     → Dependencies for L2.5 model  
+├── requirements.txt     → Python dependencies  
 ├── .gitignore           → Ignore weights, results, datasets, etc.  
-├── checkpoints/         → Folder to store trained models (*.pth)  
+├── checkpoints/         → Folder to store trained models  
 ├── results/             → Output from inference and evaluation  
 ├── visuals/             → Optional intermediate outputs (R, I, I_enh)  
 └── README.md            → This file  
@@ -28,7 +28,7 @@ Retinex-L2.5/
 
 ## Installation
 
-Install dependencies using:
+Install the required dependencies with:
 
 ```bash
 pip install -r requirements.txt
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ## Dataset Format
 
-Organize LOL-v1 or LOL-v2 datasets like this:
+Organize the LOL-v1 dataset like this:
 
 LOL-v1/  
 ├── train/low/  
@@ -47,27 +47,19 @@ LOL-v1/
   ├── low/  
   └── high/  
 
-Use `--patch_size 192` for LOL-v1 and `--patch_size 512` for LOL-v2.
+Use `--patch_size 192` for training and inference on LOL-v1.
 
 ---
 
 ## Training and Evaluation
 
-Train on LOL-v1:
+Train the model on LOL-v1:
 
 ```bash
 python main.py --mode train --data_dir ./LOL-v1 --patch_size 192
 ```
 
-Fine-tune on LOL-v2 Real:
-
-```bash
-python main.py --mode train --data_dir ./LOL-v2/real \
-  --patch_size 512 --fine_tune \
-  --resume_ckpt checkpoints/best_model.pth --lr 5e-5 --epochs 20
-```
-
-Evaluate on LOL-v1:
+Evaluate the model:
 
 ```bash
 python main.py --mode eval --data_dir ./LOL-v1/test \
@@ -75,7 +67,7 @@ python main.py --mode eval --data_dir ./LOL-v1/test \
   --calc_lpips --save_intermediates
 ```
 
-Inference on a single image:
+Run inference on a single image:
 
 ```bash
 python main.py --mode inference \
@@ -85,36 +77,38 @@ python main.py --mode inference \
   --patch_size 192 --apply_gamma --save_intermediates
 ```
 
+> You can also fine-tune or apply this model to other datasets like LOL-v2 using a similar approach.
+
 ---
 
 ## Model Overview
 
-- Retinex decomposition separates reflectance (R) and illumination (I)  
-- A deep network enhances illumination (I → I_enh) using attention modules  
-- The final image is reconstructed by combining R and I_enh  
-- Losses used for training include perceptual, color, structural, and tone-aware constraints  
+- Retinex decomposition separates the image into reflectance (R) and illumination (I)  
+- An attention-based network enhances the illumination (I → I_enh)  
+- The final output is formed by combining R with the enhanced illumination  
+- The training uses a combination of perceptual, structural, color, and tone-based loss functions  
 
 ---
 
 ## Loss Objectives
 
-| Loss Name         | Purpose                                              |
-|-------------------|------------------------------------------------------|
-| L1 Loss           | Pixel-level accuracy                                 |
-| SSIM Loss         | Preserves structural details                         |
-| LAB Color Loss    | Ensures color constancy in perceptual space          |
-| LPIPS Loss        | Measures perceptual similarity using deep features   |
-| VGG Loss          | Content reconstruction from high-level features      |
-| TV Loss           | Promotes smooth illumination maps                    |
-| Tone Loss         | Improves brightness and tone balance                 |
-| Histogram Loss    | Aligns tone distribution                             |
-| Chroma Reg Loss   | Stabilizes color saturation                          |
+| Loss Name         | Description                                        |
+|-------------------|----------------------------------------------------|
+| L1 Loss           | Preserves pixel-level accuracy                     |
+| SSIM Loss         | Maintains structural consistency                   |
+| LAB Color Loss    | Enforces perceptual color similarity               |
+| LPIPS Loss        | Measures perceptual difference using deep features|
+| VGG Loss          | Matches high-level content structure               |
+| TV Loss           | Promotes smooth illumination                       |
+| Tone Loss         | Guides brightness and exposure levels              |
+| Histogram Loss    | Aligns tone distribution between input and output  |
+| Chroma Reg Loss   | Prevents color oversaturation                      |
 
 ---
 
 ## Citations
 
-This model incorporates ideas from:
+This project incorporates concepts from the following works:
 
 ```bibtex
 @inproceedings{zhang2019kindling,
@@ -146,14 +140,12 @@ This model incorporates ideas from:
 
 ## Author
 
-**Tejas Chandrakant Thakare**  
+**Tejas Thakare**  
 GitHub: https://github.com/TejasCThakare  
-Email: tejas2iitmadras.gmail.com  
-
+Email: tejas2iitmadras@gmail.com  
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.  
-See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
