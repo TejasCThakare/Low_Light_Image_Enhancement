@@ -14,8 +14,8 @@ visuals/
 
 # Dataset folders
 data/
-LOL-v1/
-LOL-v2/
+LOLv1/
+LOLv2/
 
 # Logs and temp files
 *.log
