@@ -2,24 +2,27 @@
 __pycache__/
 *.py[cod]
 
-# Model weights
-*.pth
+# Model weights and checkpoints
 checkpoints/
+*.pth
 
-# Results
+# Inference & eval results
 results/
 visuals/
 *.jpg
 *.png
 
-# Dataset
+# Dataset folders
 data/
 LOL-v1/
 LOL-v2/
 
-# Logs and temp
+# Logs and temp files
 *.log
 *.tmp
 
-# Jupyter
+# Jupyter notebooks
 *.ipynb
+
+# VSCode project settings
+.vscode/
