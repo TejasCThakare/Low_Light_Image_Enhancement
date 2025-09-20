@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # -----------------------------------
-# Basic convolutional block
+# convolutional block
 # -----------------------------------
 class ConvBlock(nn.Module):
     def __init__(self, in_ch, out_ch, kernel_size=3, stride=1, activation=nn.ReLU(True)):
