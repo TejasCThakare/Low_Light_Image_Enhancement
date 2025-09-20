@@ -65,6 +65,15 @@ python main.py --mode inference --input_image input.jpg --checkpoint checkpoints
 
 **Inference:** `--input_image`, `--checkpoint` (required), `--output_path` ("results/enhanced.jpg"), `--save_intermediates`
 
+## Results
+
+Here are some examples of low-light image enhancement using our Attention-Guided Hybrid Retinex model:
+
+| Low-Light | Enhanced |
+|-----------|----------|
+| ![low1](results/test/low_image1.jpg) | ![enhanced1](results/test/enhanced_image1.jpg) |
+| ![low2](results/test/low_image2.jpg) | ![enhanced2](results/test/enhanced_image2.jpg) |
+| ![low3](results/test/low_image3.jpg) | ![enhanced3](results/test/enhanced_image3.jpg) |
 
 
 ## Evaluation Metrics
