@@ -7,7 +7,6 @@ A hybrid attention-guided Retinex model for low-light image enhancement featurin
 
 ```
 pip install -r requirements.txt
-
 ```
 
 ## Dataset Structure
