@@ -6,7 +6,8 @@ A hybrid attention-guided Retinex model for low-light image enhancement featurin
 ## Installation
 
 ```
-pip install torch torchvision pillow tqdm scikit-image lpips pytorch-msssim kornia numpy
+pip install -r requirements.txt
+
 ```
 
 ## Dataset Structure
