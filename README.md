@@ -75,7 +75,24 @@ Examples of low-light enhancement using our Attention-Guided Hybrid Retinex mode
 | ![low2](results/roomtej_resized.jpeg) | ![enhanced2](results/roomtejench.png) |
 | ![low3](results/flower_resized.jpeg) | ![enhanced3](results/flowerenh.png) |
 
+## Note
 
+This is an ongoing research project. Further improvements in **text preservation** and **color fidelity** are currently under development. 
+
+### Current Limitations:
+- **Text Regions**: May occasionally blur fine text details in extremely low-light scenarios
+- **Color Saturation**: Some color oversaturation in highly enhanced regions  
+- **Edge Artifacts**: Minor artifacts around high-contrast edges in complex scenes
+
+### Planned Improvements:
+- **Text-Aware Loss**: Incorporating OCR-based text region preservation
+- **Color Constancy**: Enhanced LAB color space optimization with perceptual constraints
+- **Edge Refinement**: Advanced gradient-aware smoothing in RefinerNet
+- **Adaptive Attention**: Dynamic attention weighting based on content complexity
+
+**Contributions and suggestions for improving this pipeline are welcome!**
+
+  
 ## Author
 
 **Tejas Thakare**  
