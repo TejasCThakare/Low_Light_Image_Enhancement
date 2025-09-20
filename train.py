@@ -9,7 +9,7 @@ from losses import (
     edge_loss, histogram_loss, tone_contrast_loss, VGGLoss
 )
 from utils import save_intermediates
-from eval import evaluate_model  # ⬅️ Make sure eval.py has this function
+from eval import evaluate_model  
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -80,7 +80,7 @@ def train(data_dir, epochs=100, batch_size=4, patch_size=192, lr=1e-4, save_dir=
         model_path = os.path.join(save_dir, f"retinex_epoch{epoch+1}.pth")
         torch.save(model.state_dict(), model_path)
 
-        # 🔁 Evaluate this epoch model on validation set
+        #  Evaluate this epoch model on validation set
         # val_psnr, val_ssim = evaluate_model(model, val_data_dir=os.path.join(data_dir, "val"), patch_size=patch_size)
         val_psnr, val_ssim = evaluate_model(model, val_data_dir=os.path.join(data_dir, "test"), patch_size=patch_size)
 
@@ -91,6 +91,6 @@ def train(data_dir, epochs=100, batch_size=4, patch_size=192, lr=1e-4, save_dir=
             best_psnr = val_psnr
             best_epoch = epoch + 1
             torch.save(model.state_dict(), os.path.join(save_dir, "best_model.pth"))
-            print(f"✅ Saved new best model at epoch {best_epoch} with PSNR: {best_psnr:.2f}")
+            print(f" Saved new best model at epoch {best_epoch} with PSNR: {best_psnr:.2f}")
 
-    print(f"\n🎯 Training complete! Best PSNR: {best_psnr:.2f} at epoch {best_epoch}")
+    print(f"\n Training complete! Best PSNR: {best_psnr:.2f} at epoch {best_epoch}")
