@@ -1,8 +1,9 @@
-torch==1.13.1
-torchvision==0.14.1
-kornia==0.6.7
-lpips==0.1.4
-pytorch-msssim
+torch
+torchvision
+pillow
 tqdm
 scikit-image
-Pillow
+lpips
+pytorch-msssim
+kornia
+numpy
