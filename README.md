@@ -65,14 +65,6 @@ Our hybrid model follows a **four-stage enhancement pipeline** that seamlessly i
 The pipeline processes images as: **Input → [R, I] → I_enhanced → Fusion → Final Enhanced Image**, with each stage optimized for specific enhancement tasks while maintaining computational efficiency.
 
 
-## Command Arguments
-
-**Training:** `--data_dir` (required), `--epochs` (100), `--batch_size` (4), `--lr` (1e-4), `--patch_size` (192)
-
-**Evaluation:** `--data_dir`, `--checkpoint` (required), `--save_dir` ("results_eval"), `--save_intermediates`
-
-**Inference:** `--input_image`, `--checkpoint` (required), `--output_path` ("results/enhanced.jpg"), `--save_intermediates`
-
 ## Results
 
 Examples of low-light enhancement using our Attention-Guided Hybrid Retinex model (last two are extremely low-light cases unseen during training):
