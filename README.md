@@ -1,6 +1,6 @@
 # Attention-Guided Hybrid Retinex for Low-Light Image Enhancement
 
-A hybrid attention-guided Retinex model with multi-scale refinement using ConvBlock architecture, guided fusion, and spatial attention mechanisms for improving low-light images.
+A hybrid attention-guided Retinex model with multi-scale refinement using ConvBlock architecture, guided fusion, and spatial attention mechanisms for improving low-light images. This model is trained on LOL – Low-Light dataset 
 
 
 ## Installation
@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ## Dataset Structure
 
 ```
-dataset/
+LOL-v1/
 ├── train/
 │   ├── low/     # Low-light images
 │   └── high/    # Ground truth
