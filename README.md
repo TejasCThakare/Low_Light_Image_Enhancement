@@ -58,13 +58,6 @@ python main.py --mode inference --input_image input.jpg --checkpoint checkpoints
 - **FusionNet**: Combines R and I_enh using gated fusion mechanism with learned attention weights
 - **RefinerNet**: Final refinement using MIRNet-style multi-scale attention (RRB + MFFA + SEBlock)
 
-## Key Features
-
-- **Automatic Dataset Detection**: LOL-v1 (≤1000px → 192 patches) vs LOL-v2 (>1000px → 512 patches)
-- **13-Component Loss Function**: Comprehensive supervision with total weight sum of 4.3
-- **Domain-Aware Training**: Automatic detection of Real vs Synthetic datasets
-- **Intermediate Visualization**: R, I, I_enh components saved during training and inference
-- **Complete Evaluation**: PSNR, SSIM, and LPIPS metrics with model comparison
 
 ## Command Arguments
 
