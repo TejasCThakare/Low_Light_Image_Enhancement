@@ -72,8 +72,8 @@ Here are some examples of low-light image enhancement using our Attention-Guided
 | Low-Light | Enhanced |
 |-----------|----------|
 | ![low1](results/lowlight1.png) | ![enhanced1](results/testc.png) |
-| ![low2](results/roomtej_resized.jpeg) | ![enhanced2](results/roomtejench.jpeg) |
-| ![low3](results/flower_resized.jpeg) | ![enhanced3](results/flowerenh.jpeg) |
+| ![low2](results/roomtej_resized.jpeg) | ![enhanced2](results/roomtejench.png) |
+| ![low3](results/flower_resized.jpeg) | ![enhanced3](results/flowerenh.png) |
 
 
 ## Evaluation Metrics
