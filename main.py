@@ -39,7 +39,7 @@ if __name__ == "__main__":
         )
 
     elif args.mode == "inference":
-        assert args.input_image and args.checkpoint, "⚠️ --input_image and --checkpoint are required for inference!"
+        assert args.input_image and args.checkpoint, " --input_image and --checkpoint are required for inference!"
         enhance_image(
             input_path=args.input_image,
             model_path=args.checkpoint,
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         )
 
     elif args.mode == "eval":
-        assert args.data_dir and args.checkpoint, "⚠️ --data_dir and --checkpoint are required for evaluation!"
+        assert args.data_dir and args.checkpoint, " --data_dir and --checkpoint are required for evaluation!"
         model = RetinexEnhancer().to(device)
         model.load_state_dict(torch.load(args.checkpoint, map_location=device))
         psnr_val, ssim_val = evaluate_model(
@@ -59,6 +59,6 @@ if __name__ == "__main__":
             save_dir=args.save_dir,
             save_intermediates=args.save_intermediates
         )
-        print(f"\n✅ Evaluation Complete")
-        print(f"📈 PSNR: {psnr_val:.2f}")
-        print(f"📈 SSIM: {ssim_val:.4f}")
+        print(f"\n Evaluation Complete")
+        print(f" PSNR: {psnr_val:.2f}")
+        print(f" SSIM: {ssim_val:.4f}")
