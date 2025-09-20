@@ -85,7 +85,7 @@ def train(data_dir, epochs=100, batch_size=4, patch_size=192, lr=1e-4, save_dir=
         val_psnr, val_ssim = evaluate_model(model, val_data_dir=os.path.join(data_dir, "test"), patch_size=patch_size)
 
 
-        print(f"🔍 Epoch {epoch+1} PSNR: {val_psnr:.2f} | SSIM: {val_ssim:.4f}")
+        print(f" Epoch {epoch+1} PSNR: {val_psnr:.2f} | SSIM: {val_ssim:.4f}")
 
         if val_psnr > best_psnr:
             best_psnr = val_psnr
