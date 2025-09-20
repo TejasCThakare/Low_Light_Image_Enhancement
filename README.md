@@ -76,10 +76,6 @@ Examples of low-light enhancement using our Attention-Guided Hybrid Retinex mode
 | ![low3](results/flower_resized.jpeg) | ![enhanced3](results/flowerenh.png) |
 
 
-## Evaluation Metrics
-
-Returns PSNR and SSIM metrics for model comparison. 
-
 ## Author
 
 **Tejas Thakare**  
