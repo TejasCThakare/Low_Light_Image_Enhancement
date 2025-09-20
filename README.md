@@ -67,7 +67,7 @@ python main.py --mode inference --input_image input.jpg --checkpoint checkpoints
 
 ## Results
 
-Here are some examples of low-light image enhancement using our Attention-Guided Hybrid Retinex model:
+Examples of low-light enhancement using our Attention-Guided Hybrid Retinex model (last two are extremely low-light cases unseen during training):
 
 | Low-Light | Enhanced |
 |-----------|----------|
