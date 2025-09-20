@@ -47,7 +47,7 @@ def train(data_dir, epochs=100, batch_size=4, patch_size=192, lr=1e-4, save_dir=
             loss_hist = histogram_loss(output, high)
             loss_tone = tone_contrast_loss(output, high)
 
-            # Total loss (normalized)
+            # Total loss 
             total_loss = (
                 1.0 * loss_l1 +
                 0.5 * loss_lab +
