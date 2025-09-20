@@ -30,7 +30,7 @@ def enhance_image(input_path, model_path, output_path="results/enhanced.jpg", pa
             pred = pred.pow(1 / 2.2)
 
     save_image(pred, output_path)
-    print(f"✅ Saved enhanced image: {output_path}")
+    print(f" Saved enhanced image: {output_path}")
 
     if save_intermediates:
         base = os.path.splitext(os.path.basename(output_path))[0]
@@ -38,4 +38,4 @@ def enhance_image(input_path, model_path, output_path="results/enhanced.jpg", pa
         save_image(R[0], os.path.join(base_dir, f"{base}_R.jpg"))
         save_image(I[0].expand(3, -1, -1), os.path.join(base_dir, f"{base}_I.jpg"))
         save_image(I_enh[0].expand(3, -1, -1), os.path.join(base_dir, f"{base}_Ienh.jpg"))
-        print("🧪 Saved intermediate outputs: R, I, I_enh")
+        print(" Saved intermediate outputs: R, I, I_enh")
