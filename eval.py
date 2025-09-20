@@ -56,7 +56,7 @@ def evaluate_model(model, val_data_dir, patch_size=512, save_dir=None, save_inte
     return avg_psnr, avg_ssim
 
 
-# ➕ Optional CLI usage from main.py (if --mode eval is used)
+#  Optional CLI usage from main.py (if --mode eval is used)
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
@@ -78,6 +78,6 @@ if __name__ == "__main__":
         save_intermediates=args.save_intermediates
     )
 
-    print(f"\n✅ Evaluation Complete")
-    print(f"📈 PSNR: {psnr_val:.2f}")
-    print(f"📈 SSIM: {ssim_val:.4f}")
+    print(f"\n Evaluation Complete")
+    print(f" PSNR: {psnr_val:.2f}")
+    print(f" SSIM: {ssim_val:.4f}")
