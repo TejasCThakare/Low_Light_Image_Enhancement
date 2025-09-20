@@ -71,7 +71,7 @@ Here are some examples of low-light image enhancement using our Attention-Guided
 
 | Low-Light | Enhanced |
 |-----------|----------|
-| ![low1](results/test/low_image1.jpg) | ![enhanced1](results/test/enhanced_image1.jpg) |
+| ![low1](results/lowlight1) | ![enhanced1](results/testc.jpg) |
 | ![low2](results/test/low_image2.jpg) | ![enhanced2](results/test/enhanced_image2.jpg) |
 | ![low3](results/test/low_image3.jpg) | ![enhanced3](results/test/enhanced_image3.jpg) |
 
