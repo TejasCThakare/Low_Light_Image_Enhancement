@@ -52,10 +52,18 @@ python main.py --mode inference --input_image input.jpg --checkpoint checkpoints
 
 ## Architecture
 
-- **DecompositionNet**: Separates reflectance (R) and illumination (I) using ConvBlock layers with BatchNorm
-- **RelightNet**: Enhances illumination using spatial attention and upsampling with bilinear interpolation
-- **GuidedFusion**: Combines R and I_enh using guided attention mechanism
-- **RefinerNet**: Multi-scale refinement with 3-branch kernels (3x3, 5x5, 7x7) and fusion
+Our hybrid model follows a **four-stage enhancement pipeline** that seamlessly integrates classical Retinex theory with modern attention mechanisms:
+
+**DecompositionNet** → Applies Retinex decomposition to separate input images into reflectance (R) and illumination (I) components using ConvBlock layers with BatchNorm for stable feature extraction.
+
+**RelightNet** → Enhances the illumination map through spatial attention mechanisms, utilizing adaptive pooling and channel-wise gating followed by bilinear upsampling for brightness restoration.
+
+**GuidedFusion** → Intelligently combines the original reflectance with enhanced illumination using learned attention weights, preserving color information while improving brightness.
+
+**RefinerNet** → Performs final multi-scale refinement through parallel processing branches (3×3, 5×5, 7×7 kernels) that capture both fine details and global context for natural image output.
+
+The pipeline processes images as: **Input → [R, I] → I_enhanced → Fusion → Final Enhanced Image**, with each stage optimized for specific enhancement tasks while maintaining computational efficiency.
+
 
 ## Command Arguments
 
