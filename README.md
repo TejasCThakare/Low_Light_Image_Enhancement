@@ -77,8 +77,6 @@ Examples of low-light enhancement using our Attention-Guided Hybrid Retinex mode
 
 ## Note
 
-This is an ongoing research project. Further improvements in **text preservation** and **color fidelity** are currently under development. 
-
 ### Current Limitations:
 - **Text Regions**: May occasionally blur fine text details in extremely low-light scenarios
 - **Color Saturation**: Some color oversaturation in highly enhanced regions  
