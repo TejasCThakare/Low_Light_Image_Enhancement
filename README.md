@@ -1,6 +1,6 @@
 # Attention-Guided Hybrid Retinex for Low-Light Image Enhancement
 
-A hybrid attention-guided Retinex model for low-light image enhancement featuring spatial attention mechanisms, guided fusion, and multi-scale refinement with ConvBlock architecture. Utilizes streamlined 8-component loss optimization to effectively restore brightness, enhance contrast, and preserve color fidelity while maintaining computational efficiency.
+A hybrid attention-guided Retinex model for low-light image enhancement featuring spatial attention mechanisms, guided fusion, and multi-scale refinement with ConvBlock architecture. 
 
 
 ## Installation
